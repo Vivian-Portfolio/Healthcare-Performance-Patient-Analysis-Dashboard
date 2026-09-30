@@ -184,20 +184,25 @@ Methods Used
 
 **Insight 1: Revenue targets are set unrealistically high**
 Actual 2025 revenue reached only ~24% of the combined state targets (₦47.84M vs. ₦200M). Even the best-performing state, Abuja, hit just ~27–28%, while Anambra lagged at ~21%. This gap is consistent across every state, which suggests the targets themselves — not underperformance — are the issue, and should be reviewed rather than treated as a KPI failure.
+
 **Insight 2: Waiting time has no meaningful effect on patient satisfaction**
 A scatter plot of waiting time vs. satisfaction score, with a trend line, shows an essentially flat relationship. Pharmacy has both short wait times and the highest satisfaction, while Outpatient has short waits but comparatively lower satisfaction — meaning other factors (likely staff interaction, communication, or diagnosis outcome) drive satisfaction more than speed of service.
+
 **Insight 3: Departments are operationally similar but differ in patient outcomes**
 Waiting time (43–47 min) and satisfaction (3.60–3.74) are nearly uniform across all departments. However, outcome mix varies: Pharmacy has the lowest recovery rate (50.5%) and highest follow-up rate (23.7%), while Laboratory has the highest recovery rate (58.8%). This points to differences in case complexity or treatment pathway rather than service quality.
+
 **Insight 4: Most patients are returning, not new**
 889 of 1,200 patients (74%) are returning patients, averaging 2.43 visits each. This signals either strong patient trust/retention or a pattern of chronic/recurring conditions requiring multiple visits — worth investigating further to know which.
+
 **Insight 5: Data quality issues exist and should be disclosed, not silently corrected**
 94 male patients are recorded under the Maternity department, and 183 of 221 Pediatrics patients are aged 18+. Rather than deleting or "fixing" these records (which would distort the dataset), they are flagged here as likely data entry or categorization errors for the client to investigate at the source.
 
 ---
 
 ## 10. Recommendations
+
 | Priority  | Recommendation | Based On  | Suggested Owner | 
-------------|----------------|-----------|-----------------|------
+------------|----------------|-----------|-----------------|
 | High | Review and reset state-level revenue targets using historical actuals rather than fixed annual figures | Insight 1 | Finance / Executive team
 | High| Investigate root cause of low Pharmacy recovery/high follow-up rate — compare treatment protocols against Laboratory | Insight 3| Clinical Operations
 | High | Audit Maternity and Pediatrics records for gender/age miscategorization at the point of data entry | Insight 5 | Health Records / IT
