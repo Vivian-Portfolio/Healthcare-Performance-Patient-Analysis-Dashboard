@@ -138,7 +138,7 @@ Date range:
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
 |`State`| string | Nigerian state | Anambra |
-|`Annual_Revenue_Target_NGN`| float | 50,000,000 |
+|`Annual_Revenue_Target_NGN`| float | ₦50,000,000 |
 > ** Row count: 4 states
 
 ## Dataset / Table: Dim_Date (from Date_Table sheet
@@ -164,7 +164,7 @@ Marked as the official Date table in Power BI's model settings.
 |--------|--------------------------|----------------|
 | `Total Patient]` | Distinct count of patients treated across all branches in 2025 (1,200) |Establishes the size of the patient base for all other ratio |
 | `Total Visits` | Sums all visit, including repeat visits (2,920)|  Shows true care volume - distinct from patient count, since each patient can visit up to 4 times  |
-| `Target Revenue` | Sum of revenue across all visits (47.84M)  | Core financial pout put measure |
+| `Target Revenue` | Sum of revenue across all visits (₦47.84M)  | Core financial pout put measure |
 | `Target Achievement %` | Actual revenue / pro -rated annual target by state | Flags whether revenue targets are realistic and where performance gaps exist |
 | `Avg Satisfaction Score]` | Mean satisfaction scores (1-5) across  all visit (3.71) |Tracks patients experience quality independent of financial performance  |
 | `Returning Patients %` | share of patients with more than one visits (74%) | Indicates patients retention/ loyalty to the health system  |
