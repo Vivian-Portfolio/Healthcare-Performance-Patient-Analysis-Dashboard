@@ -62,7 +62,7 @@
 |-----------|---------|
 | **In Scope** | Patient visits, state targets, and date data from IFEXA_HealthCare_BI_Project_Dataset.xlsx |
 | **Out of Scope** | External data sources and real-time/live data feeds (dataset is a static extract) |
-| **Time Period** | [Insert date range from the Date Table] |
+| **Time Period** | January - December 2025 |
 | **Granularity** | Row-level patient visits, aggregated by state and date |
 
 ### Tools & Technologies
@@ -71,7 +71,7 @@
 |----------|-------------|
 | Data Source | Excel (.xlsx) |
 | Data Cleaning & Transformation |Power Query (Power BI)|
-| Modelling & Calculations| [e.g., pandas, dplyr, custom SQL queries] |
+| Modelling & Calculations| Dax (Dats Analysis Expressions) - 18  custom measures |
 | Visualization | Power BI Desktop |
 | Version Control | Git & GitHub |
 
