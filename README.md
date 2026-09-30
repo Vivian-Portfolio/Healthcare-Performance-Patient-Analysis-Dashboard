@@ -58,33 +58,6 @@
 
 ## 3. Project Scope & Tools
 
-Scope
-Dimension
-Details
-In Scope
-Patient visits, state targets, and date data from IFEXA_HealthCare_BI_Project_Dataset.xlsx
-Out of Scope
-
-Time Period
-[Insert date range from the Date Table]
-Granularity
-Row-level patient visits, aggregated by state and date
-Tools & Technologies
-Category
-Tool(s) Used
-Data Source
-Excel (.xlsx)
-Data Cleaning & Transformation
-Power Query (Power BI)
-Modelling & Calculations
-Power BI, DAX
-Visualisation
-Power BI Desktop
-Version Control
-Git & GitHub
-
--->
-
 | Dimension | Details |
 |-----------|---------|
 | **In Scope** | Patient visits, state targets, and date data from IFEXA_HealthCare_BI_Project_Dataset.xlsx |
@@ -163,13 +136,15 @@ Date range:
 ## Dataset / Table: Dim_State (from State_Targets sheet
 
 | Field Name | Data Type | Description | Example Value |
+|------------|-----------|-------------|---------------|
 |`State`| string | Nigerian state | Anambra |
 |`Annual_Revenue_Target_NGN`| float | 50,000,000 |
 > ** Row count: 4 states
 
 ## Dataset / Table: Dim_Date (from Date_Table sheet
 
-| Field Name  | Data Type | Description  |Example Value |
+| Field Name  | Data Type | Description  | Example Value |
+|-------------|-----------|--------------|---------------|
 |`Date` |date | Calendar date | 2025-01-01 |
 |`Year`| int | Calendar year | 2025 |
 |`Month_Number`| int | Month as number | 1 |
