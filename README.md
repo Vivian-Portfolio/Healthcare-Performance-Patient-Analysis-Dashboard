@@ -162,85 +162,73 @@ Marked as the official Date table in Power BI's model settings.
 
 | Metric | Plain-Language Definition | Why It Matters |
 |--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
+| `Total Patient]` | Distinct count of patients treated across all branches in 2025 (1,200) |Establishes the size of the patient base for all other ratio |
+| `Total Visits` | Sums all visit, including repeat visits (2,920)|  Shows true care volume - distinct from patient count, since each patient can visit up to 4 times  |
+| `Target Revenue` | Sum of revenue across all visits (47.84M)  | Core financial pout put measure |
+| `Target Achievement %` | Actual revenue / pro -rated annual target by state | Flags whether revenue targets are realistic and where performance gaps exist |
+| `Avg Satisfaction Score]` | Mean satisfaction scores (1-5) across  all visit (3.71) |Tracks patients experience quality independent of financial performance  |
+| `Returning Patients %` | share of patients with more than one visits (74%) | Indicates patients retention/ loyalty to the health system  |
+| `Profit Margin %` | [(Revenue - Cost ) / Revenue (~38%) | Shows financial substainability per visit |
 
 ### Methods Used
-
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+Methods Used
+- Descriptive statistics — distribution of age, revenue, waiting time, satisfaction; outlier and data-quality checks
+- Trend analysis of monthly patient visits and revenue across 2025
+- Segmentation/group comparison by department, branch, state, age group, and patient type (new vs. returning)
+- Correlation analysis between waiting time and satisfaction score (scatter plot + trend line)
+- Custom DAX measures in Power BI for target pro-ration, YoY/MoM growth, and patient retention funnel logic
 
 ---
 
 ## 9. Key Insights
 
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
-
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
+**Insight 1: Revenue targets are set unrealistically high**
+Actual 2025 revenue reached only ~24% of the combined state targets (₦47.84M vs. ₦200M). Even the best-performing state, Abuja, hit just ~27–28%, while Anambra lagged at ~21%. This gap is consistent across every state, which suggests the targets themselves — not underperformance — are the issue, and should be reviewed rather than treated as a KPI failure.
+**Insight 2: Waiting time has no meaningful effect on patient satisfaction**
+A scatter plot of waiting time vs. satisfaction score, with a trend line, shows an essentially flat relationship. Pharmacy has both short wait times and the highest satisfaction, while Outpatient has short waits but comparatively lower satisfaction — meaning other factors (likely staff interaction, communication, or diagnosis outcome) drive satisfaction more than speed of service.
+**Insight 3: Departments are operationally similar but differ in patient outcomes**
+Waiting time (43–47 min) and satisfaction (3.60–3.74) are nearly uniform across all departments. However, outcome mix varies: Pharmacy has the lowest recovery rate (50.5%) and highest follow-up rate (23.7%), while Laboratory has the highest recovery rate (58.8%). This points to differences in case complexity or treatment pathway rather than service quality.
+**Insight 4: Most patients are returning, not new**
+889 of 1,200 patients (74%) are returning patients, averaging 2.43 visits each. This signals either strong patient trust/retention or a pattern of chronic/recurring conditions requiring multiple visits — worth investigating further to know which.
+**Insight 5: Data quality issues exist and should be disclosed, not silently corrected**
+94 male patients are recorded under the Maternity department, and 183 of 221 Pediatrics patients are aged 18+. Rather than deleting or "fixing" these records (which would distort the dataset), they are flagged here as likely data entry or categorization errors for the client to investigate at the source.
 
 ---
 
 ## 10. Recommendations
-
-
-| Priority | Recommendation | Based On | Suggested Owner |
-|----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| Priority  | Recommendation | Based On  | Suggested Owner | 
+------------|----------------|-----------|-----------------|------
+| High | Review and reset state-level revenue targets using historical actuals rather than fixed annual figures | Insight 1 | Finance / Executive team
+| High| Investigate root cause of low Pharmacy recovery/high follow-up rate — compare treatment protocols against Laboratory | Insight 3| Clinical Operations
+| High | Audit Maternity and Pediatrics records for gender/age miscategorization at the point of data entry | Insight 5 | Health Records / IT
+| Medium |  Shift patient experience initiatives away from wait-time reduction toward staff communication/service quality, since wait time doesn't drive satisfaction | Insight 2 | Patient Experience team
+| Medium | Build a retention/loyalty program targeting the 74% returning patient base to understand and reinforce what's driving repeat visits| Insight 4 || Marketing / Patient Relations
+| Low |  | Expand target-setting to branch and monthly granularity instead of annual/state-only, to enable more precise tracking | Insight | Finance
 
 ---
 
 ## 11. Assumptions & Limitations
 
-
 ### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
+- Each row in Fact_Visits represents one patient's cumulative record for the year, with Visit_Count representing total visits — not one row per individual visit event.
+- Revenue targets, provided only at annual/state grain, were assumed to scale evenly across months for the Revenue Target measure (annual target ÷ 12 × months in filter context).
+- Records with data quality issues (e.g., male patients in Maternity) were treated as genuine entries for analysis purposes rather than excluded, since there was no way to verify or correct the true value.
 
 ### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
-
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
+- Revenue targets cannot be broken down by branch or department, only by state and year — limiting how precisely underperformance can be localized.
+- The dataset covers only 2025, so no year-over-year trend analysis is possible.
+- No qualitative data (e.g., patient comments, staff notes) exists to explain why satisfaction or outcomes vary — the dashboard identifies patterns but not root causes.
+- Known data quality issues (Maternity/Pediatrics mismatches) were not corrected, so downstream department-level figures for those two departments should be read with that caveat in mind.
+*A skeptic might ask: "If some Maternity/Pediatrics records are wrong, can we trust any department-level numbers?" — Yes, for all other departments; the flagged issues are isolated to two departments and were identified precisely because they were checked, not assumed correct.*
 
 ---
 
 ## 12. Future Enhancements
+- [ ] Add branch- and month-level revenue targets to enable more granular achievement tracking
+- [ ] Build a patient-level drill-through page (by Patient_ID) for deeper case investigation
+- [ ] Incorporate multi-year data once available, to enable real YoY trend analysis
+- [ ] Add a data-quality monitoring page that flags mismatches (e.g., gender/department, age/department) automatically as new data loads
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Automate the monthly data pull from the POS export folder using
-      a scheduled Python script, replacing the current manual process."
-  ✅ "Expand the return rate analysis to include carrier-level data,
-      which was unavailable in this dataset but exists in the logistics system."
-
-  WHAT TO AVOID:
-  ❌ "Add a machine learning model."
-     (Vague, and disconnected from the actual findings of this project.)
-  ❌ Listing aspirational features that don't follow logically from the work.
--->
-
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
 
 ---
 
@@ -248,15 +236,17 @@ Marked as the official Date table in Power BI's model settings.
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
+| Power BI file (.pbix) | Full interactive dashboard — 5 report pages, drill-through, tooltips, bookmarks | [`/path/to/file`] |
+| Cleaned dataset |Excel/CSV export of the transformed dataset (with Age_Group, Patient_Type, Satisfaction_Band columns added | [`/path/to/file`] |
+| GitHub repository] | Contains .pbix file, cleaned dataset, screenshots folder, and this README | [`/path/to/file`] |
+| Dashboard screenshots | Image of each of the 5 report pages + Branch Detail drill-through page | [`/path/to/file`] |
+| Presentation | 3–5 minute walkthrough covering problem, analysis, dashboard demo, findings, and recommendations | [`/path/to/file`] |
 
 ---
 
 ## 14. Author
 
-**[Your Name]**
+**Vivian Okwara**
 [Your role or title - current or target]
 
 - 🔗 [LinkedIn URL]
