@@ -242,7 +242,7 @@ Waiting time (43–47 min) and satisfaction (3.60–3.74) are nearly uniform acr
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
 | Power BI file (.pbix) | Full interactive dashboard — 5 report pages, drill-through, tooltips, bookmarks | [`/path/to/file`] |
-| Cleaned dataset |Excel/CSV export of the transformed dataset (with Age_Group, Patient_Type, Satisfaction_Band columns added | [`/path/to/file`] |
+| Cleaned dataset |Excel/CSV export of the transformed dataset (with Age_Group, Patient_Type, Satisfaction_Band columns added |IFEXA_HealthCare_BI_Project_Dataset.xlsx |
 | GitHub repository] | Contains .pbix file, cleaned dataset, screenshots folder, and this README | [`/path/to/file`] |
 | Dashboard screenshots | Image of each of the 5 report pages + Branch Detail drill-through page | [`/path/to/file`] |
 | Presentation | 3–5 minute walkthrough covering problem, analysis, dashboard demo, findings, and recommendations | [`/path/to/file`] |
