@@ -1,5 +1,5 @@
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
+# Healthcare Performance & Patient Analytics Dashboard
+> *A Power BI dashboard that tracks patient volume, hospital operations, financial performance and patient experience across Nigerian states, so leadership can see where the organisation is meeting its targets and where it is not.*
 
 ---
 
@@ -8,10 +8,10 @@
 
 - [ ] Exploratory Data Analysis (EDA)
 - [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
+- [x] Dashboard / Data Visualization
 - [ ] Data Pipeline / ETL
 - [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
+- [x] Data Cleaning / Wrangling
 - [ ] End-to-End (multiple of the above)
 - [ ] Other: ___________
 
@@ -24,70 +24,33 @@
 4. [Repository Structure](#4-repository-structure)
 5. [Data Workflow](#5-data-workflow)
 6. [Data Model & Schema](#6-data-model--schema)
-7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analysis & Metrics](#8-analysis--metrics)
-9. [Key Insights](#9-key-insights)
-10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
-13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
+7. [Analysis & Metrics](#7-analysis--metrics)
+8. [Key Insights](#8-key-insights)
+9. [Recommendations](#9-recommendations)
+10. [Assumptions & Limitations](#10-assumptions--limitations)
+11. [Future Enhancements](#11-future-enhancements)
+12. [Deliverables](#12-deliverables)
+13. [Author](#13-author)
 
 ---
 
-## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
+**Context:** A healthcare organisation operating across several Nigerian states needs one place to monitor patient activity, hospital performance and finances against set targets.
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
+**Problem Statement:** How are patient volumes, operations, revenue and patient satisfaction performing by state and over time, and where are the gaps against target?
 
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
+**Approach:** I cleaned and modelled the patient visit data in Power BI using a star schema, then built DAX measures and a five-page interactive dashboard.
 
-**Context:** [The business, research, or personal situation that motivated this project.]
-
-**Problem Statement:** [The specific question or challenge you were addressing.]
-
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
+**Outcome:** An executive-ready dashboard with actionable insights on performance, cost, and patient experience.
 
 ---
 
 ## 2. Objectives
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
-
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
-
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
+- **Primary Objective:** Deliver a Power BI dashboard that gives leadership a clear view of healthcare performance and patient analytics across states.
+- **Secondary Objective 1:** Compare actual performance with state targets.
+- **Secondary Objective 2:**  Analyse patient demographics, hospital operations, and financial performance.
+- **Secondary Objective 3:**  Measure patient experience and identify areas to improve.
 
 > 💡 *Every analysis decision in this project traces back to one of these objectives.*
 
@@ -95,279 +58,128 @@
 
 ## 3. Project Scope & Tools
 
-### Scope
+Scope
+Dimension
+Details
+In Scope
+Patient visits, state targets, and date data from IFEXA_HealthCare_BI_Project_Dataset.xlsx
+Out of Scope
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
+Time Period
+[Insert date range from the Date Table]
+Granularity
+Row-level patient visits, aggregated by state and date
+Tools & Technologies
+Category
+Tool(s) Used
+Data Source
+Excel (.xlsx)
+Data Cleaning & Transformation
+Power Query (Power BI)
+Modelling & Calculations
+Power BI, DAX
+Visualisation
+Power BI Desktop
+Version Control
+Git & GitHub
 
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
 -->
 
 | Dimension | Details |
 |-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+| **In Scope** | Patient visits, state targets, and date data from IFEXA_HealthCare_BI_Project_Dataset.xlsx |
+| **Out of Scope** | External data sources and real-time/live data feeds (dataset is a static extract) |
+| **Time Period** | [Insert date range from the Date Table] |
+| **Granularity** | Row-level patient visits, aggregated by state and date |
 
 ### Tools & Technologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
 | Category | Tool(s) Used |
 |----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+| Data Source | Excel (.xlsx) |
+| Data Cleaning & Transformation |Power Query (Power BI)|
+| Modelling & Calculations| [e.g., pandas, dplyr, custom SQL queries] |
+| Visualization | Power BI Desktop |
+| Version Control | Git & GitHub |
 
 ---
 
 ## 4. Repository Structure
 
 ```
-[project-root]/
-│
+├── README.md
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
-│
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
-│
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
+│   ├── raw/          # Original dataset
+│   └── cleaned/      # Cleaned dataset
+├── dashboard/
+│   └── healthcare_dashboard.pbix
+├── screenshots/      # Dashboard page images
+└── presentation/     # 3–5 minute presentation
 ```
-
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
 
 ---
 
 ## 5. Data Workflow
 
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
-
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
-
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
-
-```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
-```
-
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
+1. **Source:** IFEXA_HealthCare_BI_Project_Dataset.xlsx, provided as a single Excel workbook with 3 sheets: Patient_Visits (1,200 rows), State_Targets (4 rows), Date_Table (365 days, 2025 only)."
+2. **Ingestion:** Loaded into Power BI via Get Data → Excel. All three sheets imported as separate queries into Power Query."
+3. **Cleaning:** No nulls or duplicate rows found in Patient_Visits. Trimmed and cleaned all text columns. Fixed a data-type issue where Visit_Date and Date columns loaded as serial numbers rather than dates — corrected via column type conversion. Fixed a spelling error in the Patient_Type conditional column ('Returing' → 'Returning') via Replace Values."
+4. Transformation:** Created 3 new columns via conditional logic: Age_Group (6 bands: 0-12 through 66+), Patient_Type (New vs Returning, based on Visit_Count > 1), and Satisfaction_Band (5 bands: 0-1 through 4-5, based on Satisfaction_Score). Built a star schema with Fact_Visits (renamed from Patient_Visits) as the central table, connected to Dim_Date, Dim_State, Dim_Branch, and Dim_Department via one-to-many relationships. Marked Dim_Date as the official date table."
+5. **Analysis:** 18 DAX measures created, covering totals (Revenue, Cost, Profit, Patients, Visits), rates (Profit Margin %, Achievement %, Returning %), time intelligence (MoM/YoY growth), and averages (Waiting Time, Satisfaction, Revenue per Patient). Cross-analyzed by State, Branch, Department, Age Group, Gender, Diagnosis, and Outcome across 5 report pages plus 1 drill-through detail page."
+6. **Output:** Power BI file (.pbix), cleaned dataset export, GitHub repository with README and dashboard screenshots, 3-5 minute presentation."
 
 ---
 
 ## 6. Data Model & Schema
 
-<!--
-  Define your fields so that someone reading your analysis can follow along
-  without digging through your code.
-
-  WHAT GOOD LOOKS LIKE (one row example):
-  | transaction_id | string | Unique identifier per sales transaction | TXN-00482 |
-  | return_flag    | boolean | Whether the transaction included a return | TRUE |
-  | region_code    | string | Two-letter identifier for store region | "NE" |
-
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
-
-  📌 FOR SQL PROJECTS: If you have multiple tables, create one block per table.
-     Describe join keys and relationships here. Your ERD (Section 7) will
-     visualise what this section describes in text.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
--->
-
-### Dataset / Table: `[name]`
-
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `Patient_ID` | string  | Unique patient identifier | PT-0008  |
+| `Visit_Date` | date | Date the visit was recorded| 2025-03-14 | 
+| `State` | string | Nigerian states where the visit took place | Lagos |
+| `Branch` | string |Hospital branch | 2025-03-14 | Lekki |
+| `Department` | string | Hospital department | 2025-03-14 |Laboratory|
+| `Service` | string |Specific service provided | Laboratory Test|
+| `Diagnosis` | string |Recorded diagnosis| Malaria |
+| `Age` |int | Patient age|  24 |
+| `Gender` | string |Male / Female |Female| 
+| `Visit_Count` | int |Total visits by this patient (1-4) | 3 |
+| `Waiting_Time_Min` | int| Minutes waited |45 
+| `Satisfaction_Score` | float |Patient satisfaction, 1-5 |4.20 |
+| `Revenue_NGN` | float |Revenue for the visit |29890.17 |
+| `Cost_NGN` |float| Cost for the visit| 23000 |
+|`Outcome` | string | Recovered / Follow-up / Admitted / Referred | Follow-up |
+|`Payment_Method`| string | Cash / Card / Transfer | Cash |
+|`Insurance_Type` | string |Insurance category | Private HMO |
+|`Age_Group` | string | Derived: 0-12 to 66+ | 18-35 |
+|`Patient_Type` | string | Derived: New / Returning  | Returning |
+|`Satisfaction_Band`| string | Derived: 0-1 to 4-5 | 3-4
 
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
+Row count: 1,200 patients (2,920 total visits)
+Date range:
+> **Row count (approx.):1,200 patients (2,920 total visits)
+> **Date range:**  2025-01-01 – 2025-12-31
 
-*Add additional table blocks as needed for multi-table projects.*
+## Dataset / Table: Dim_State (from State_Targets sheet)
+| Field Name | Data Type | Description | Example Value |
+|`State`| string | Nigerian state | Anambra |
+|`Annual_Revenue_Target_NGN`| float | 50,000,000 |
+> ** Row count: 4 states
 
----
+## Dataset / Table: Dim_Date (from Date_Table sheet)**
+| Field Name  | Data Type | Description  |Example Value |
+|`Date` |date | Calendar date | 2025-01-01 |
+|`Year`| int | Calendar year | 2025 |
+|`Month_Number`| int | Month as number | 1 |
+|`Month` | string | Month name | January |
+|`Quarter`| string | Quarter | Q1 |
 
-## 7. ERD - Entity Relationship Diagram
-### *(Primarily for SQL Projects - remove this section if not applicable)*
-
-<!--
-  An ERD shows how your tables connect to each other visually.
-  It is the fastest way for a reviewer to understand the data structure
-  of a SQL project without reading every query.
-
-  HOW TO INCLUDE YOUR ERD:
-  Option A - Image embed (most common):
-    Export your ERD from dbdiagram.io, DBeaver, Lucidchart, or similar.
-    Save to /visuals/erd.png and reference it below.
-
-  Option B - dbdiagram.io code block (version-controllable):
-    Paste your schema definition code directly in the fenced block below.
-    Anyone can paste it into dbdiagram.io to regenerate the visual.
-
-  Option C - Mermaid diagram (renders natively in GitHub):
-    Use the mermaid code block syntax below.
-    GitHub will render this as a diagram automatically.
-
-  PICK ONE. Don't use all three. Delete the options you don't use.
--->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
-
----
-
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
-
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
-
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
-
----
-
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
-
----
-
-**Table Relationships Summary:**
-
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
+>**Row count: 365 days (Jan 1 – Dec 31, 2025)
+Marked as the official Date table in Power BI's model settings.
 
 ---
 
 ## 8. Analysis & Metrics
-
-<!--
-  Explain what you measured and how - before you share what you found.
-
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
-
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
-
-### Analytical Approach
-
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
 
 ### Key Metrics Defined
 
@@ -390,24 +202,6 @@ erDiagram
 
 ## 9. Key Insights
 
-<!--
-  Findings + implications. Not just what happened - what it means.
-
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
-
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
-
-  Aim for 3–6 insights. Quality over quantity.
--->
-
 **Insight 1: [Short descriptive headline]**
 [What you found + what it suggests. One short paragraph.]
 
@@ -424,24 +218,6 @@ erDiagram
 
 ## 10. Recommendations
 
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
-
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
-
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
@@ -453,20 +229,6 @@ erDiagram
 
 ## 11. Assumptions & Limitations
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  Assumption: "Transaction records were assumed to be complete for all five regions.
-               No validation was performed against source system record counts."
-  Limitation: "The analysis cannot distinguish between returns initiated by
-               the customer vs. returns initiated by the business (e.g., recalls).
-               If business-initiated returns are concentrated in Region A, the
-               return rate finding may reflect a policy decision, not a quality issue."
-
-  WHAT TO AVOID:
-  ❌ Leaving this section blank or writing "None known."
-     Every project has limitations. Documenting them is a sign of
-     analytical maturity - not a confession of failure.
--->
 
 ### Assumptions
 - [What did you treat as true without being able to verify?]
