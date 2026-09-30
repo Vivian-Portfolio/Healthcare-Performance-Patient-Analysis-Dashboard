@@ -160,13 +160,15 @@ Date range:
 > **Row count (approx.):1,200 patients (2,920 total visits)
 > **Date range:**  2025-01-01 – 2025-12-31
 
-## Dataset / Table: Dim_State (from State_Targets sheet)
+## Dataset / Table: Dim_State (from State_Targets sheet
+
 | Field Name | Data Type | Description | Example Value |
 |`State`| string | Nigerian state | Anambra |
 |`Annual_Revenue_Target_NGN`| float | 50,000,000 |
 > ** Row count: 4 states
 
-## Dataset / Table: Dim_Date (from Date_Table sheet)**
+## Dataset / Table: Dim_Date (from Date_Table sheet
+
 | Field Name  | Data Type | Description  |Example Value |
 |`Date` |date | Calendar date | 2025-01-01 |
 |`Year`| int | Calendar year | 2025 |
@@ -174,7 +176,7 @@ Date range:
 |`Month` | string | Month name | January |
 |`Quarter`| string | Quarter | Q1 |
 
->**Row count: 365 days (Jan 1 – Dec 31, 2025)
+> **Row count: 365 days (Jan 1 – Dec 31, 2025)
 Marked as the official Date table in Power BI's model settings.
 
 ---
