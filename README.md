@@ -138,7 +138,7 @@ Date range:
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
 |`State`| string | Nigerian state | Anambra |
-|`Annual_Revenue_Target_NGN`| float | ₦50,000,000 |
+|`Annual_Revenue_Target_NGN`| float | ₦50,000,000 |  ₦2000 |
 > ** Row count: 4 states
 
 ## Dataset / Table: Dim_Date (from Date_Table sheet
@@ -207,8 +207,8 @@ Waiting time (43–47 min) and satisfaction (3.60–3.74) are nearly uniform acr
 | High| Investigate root cause of low Pharmacy recovery/high follow-up rate — compare treatment protocols against Laboratory | Insight 3| Clinical Operations
 | High | Audit Maternity and Pediatrics records for gender/age miscategorization at the point of data entry | Insight 5 | Health Records / IT
 | Medium |  Shift patient experience initiatives away from wait-time reduction toward staff communication/service quality, since wait time doesn't drive satisfaction | Insight 2 | Patient Experience team
-| Medium | Build a retention/loyalty program targeting the 74% returning patient base to understand and reinforce what's driving repeat visits| Insight 4 || Marketing / Patient Relations
-| Low |  | Expand target-setting to branch and monthly granularity instead of annual/state-only, to enable more precise tracking | Insight | Finance
+| Medium | Build a retention/loyalty program targeting the 74% returning patient base to understand and reinforce what's driving repeat visits| Insight 4 | Marketing / Patient Relations
+| Low  | Expand target-setting to branch and monthly granularity instead of annual/state-only, to enable more precise tracking | Insight | Finance
 
 ---
 
