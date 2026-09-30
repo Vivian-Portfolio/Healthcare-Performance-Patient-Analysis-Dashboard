@@ -259,5 +259,4 @@ Data Analyst | Lagos, Nigeria
 - 📧 Email: okwaravivian26@gmail.com
 ---
 
-*Last updated: [Month YYYY]*
-*If this template helped you, consider starring the repository.*
+*Last updated: Septermber 2026*
