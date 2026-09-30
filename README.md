@@ -247,12 +247,11 @@ Waiting time (43–47 min) and satisfaction (3.60–3.74) are nearly uniform acr
 ## 14. Author
 
 **Vivian Okwara**
-[Your role or title - current or target]
+Data Analyst | Lagos, Nigeria 
 
-- 🔗 [LinkedIn URL]
-- 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
-
+- 🔗 LinkedIn: https://linkedin.com/in/okwara-vivian
+- 💼 https://Vivian-Portfolio. github.io
+- 📧 Email: okwaravivian26@gmail.com
 ---
 
 *Last updated: [Month YYYY]*
